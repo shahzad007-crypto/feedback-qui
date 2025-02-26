@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grammar Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .instructions {
+      margin-bottom: 20px;
+    }
+    .grade-box {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: green;
+    }
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+    .feedback {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Grammar Quiz</h2>
+  <div class="instructions">
+    Instructions: Choose the best option to correct the underlined part of each sentence. Focus only on grammar.
+  </div>
+
+  <!-- Grade Display -->
+  <div class="grade-box" id="grade-box" style="display: none;">
+    Your score: <span id="score">0</span>/<span id="total">13</span>
+  </div>
+
+  <!-- Error Message -->
+  <div class="error" id="error-message" style="display: none;">Please answer all questions before submitting.</div>
+
+  <!-- Quiz Questions -->
+  <form id="quiz-form">
+    <!-- Question 1 -->
+    <div class="question" id="q1-container">
+      <p><strong>1.</strong> "I am writing this email inform you..."</p>
+      <label><input type="radio" name="q1" value="a"> a) I am writing this email to inform you...</label><br>
+      <label><input type="radio" name="q1" value="b"> b) I am writing this email inform you...</label><br>
+      <label><input type="radio" name="q1" value="c"> c) I write this email to inform you...</label>
+      <div class="feedback" id="q1-feedback"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2-container">
+      <p><strong>2.</strong> "I would like request..."</p>
+      <label><input type="radio" name="q2" value="a"> a) I would like to request...</label><br>
+      <label><input type="radio" name="q2" value="b"> b) I would like requesting...</label><br>
+      <label><input type="radio" name="q2" value="c"> c) I would like request...</label>
+      <div class="feedback" id="q2-feedback"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3-container">
+      <p><strong>3.</strong> "...help me to get register..."</p>
+      <label><input type="radio" name="q3" value="a"> a) help me to get registered...</label><br>
+      <label><input type="radio" name="q3" value="b"> b) help me to get register...</label><br>
+      <label><input type="radio" name="q3" value="c"> c) help me to getting registered...</label>
+      <div class="feedback" id="q3-feedback"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4-container">
+      <p><strong>4.</strong> "I would like to meetings with you..."</p>
+      <label><input type="radio" name="q4" value="a"> a) I would like to meet with you...</label><br>
+      <label><input type="radio" name="q4" value="b"> b) I would like to meeting with you...</label><br>
+      <label><input type="radio" name="q4" value="c"> c) I would like to meets with you...</label>
+      <div class="feedback" id="q4-feedback"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5-container">
+      <p><strong>5.</strong> "...discuss about the registration now..."</p>
+      <label><input type="radio" name="q5" value="a"> a) discuss about the registration now...</label><br>
+      <label><input type="radio" name="q5" value="b"> b) discuss the registration now...</label><br>
+      <label><input type="radio" name="q5" value="c"> c) discuss about registration now...</label>
+      <div class="feedback" id="q5-feedback"></div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question" id="q6-container">
+      <p><strong>6.</strong> "Find the possibility to make best timetable..."</p>
+      <label><input type="radio" name="q6" value="a"> a) Find the possibility to make best timetable...</label><br>
+      <label><input type="radio" name="q6" value="b"> b) Find the possibility of making the best timetable...</label><br>
+      <label><input type="radio" name="q6" value="c"> c) Find the possibility to make a best timetable...</label>
+      <div class="feedback" id="q6-feedback"></div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question" id="q7-container">
+      <p><strong>7.</strong> "I am sorry for coming late..." (This part is already grammatically correct)</p>
+      <label><input type="radio" name="q7" value="correct" checked> Correct</label>
+      <div class="feedback" id="q7-feedback"></div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question" id="q8-container">
+      <p><strong>8.</strong> "...because I take my parents on a trip..."</p>
+      <label><input type="radio" name="q8" value="a"> a) because I took my parents on a trip...</label><br>
+      <label><input type="radio" name="q8" value="b"> b) because I take my parents on a trip...</label><br>
+      <label><input type="radio" name="q8" value="c"> c) because I taken my parents on a trip...</label>
+      <div class="feedback" id="q8-feedback"></div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question" id="q9-container">
+      <p><strong>9.</strong> "...to make them happy." (This part is already grammatically correct)</p>
+      <label><input type="radio" name="q9" value="correct" checked> Correct</label>
+      <div class="feedback" id="q9-feedback"></div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question" id="q10-container">
+      <p><strong>10.</strong> "I will send a carbon copy to head of department."</p>
+      <label><input type="radio" name="q10" value="a"> a) I will send a carbon copy to the head of department.</label><br>
+      <label><input type="radio" name="q10" value="b"> b) I will send a carbon copy to head of department.</label><br>
+      <label><input type="radio" name="q10" value="c"> c) I will send a carbon copy to a head of department.</label>
+      <div class="feedback" id="q10-feedback"></div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question" id="q11-container">
+      <p><strong>11.</strong> "Your Student"</p>
+      <label><input type="radio" name="q11" value="a"> a) Best regards</label><br>
+      <label><input type="radio" name="q11" value="b"> b) Your Student</label><br>
+      <label><input type="radio" name="q11" value="c"> c) Best wishes</label>
+      <div class="feedback" id="q11-feedback"></div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question" id="q12-container">
+      <p><strong>12.</strong> "A first year diploma student..."</p>
+      <label><input type="radio" name="q12" value="a"> a) A first-year diploma student...</label><br>
+      <label><input type="radio" name="q12" value="b"> b) A first year diploma student...</label><br>
+      <label><input type="radio" name="q12" value="c"> c) A first year's diploma student...</label>
+      <div class="feedback" id="q12-feedback"></div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question" id="q13-container">
+      <p><strong>13.</strong> "I look forward to hear from you."</p>
+      <label><input type="radio" name="q13" value="a"> a) I look forward to hearing from you.</label><br>
+      <label><input type="radio" name="q13" value="b"> b) I look forward to hear from you.</label><br>
+      <label><input type="radio" name="q13" value="c"> c) I am looking forward to hear from you.</label>
+      <div class="feedback" id="q13-feedback"></div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+  </form>
+
+  <script>
+    // Correct Answers
+    const correctAnswers = {
+      q1: "a",
+      q2: "a",
+      q3: "a",
+      q4: "a",
+      q5: "b",
+      q6: "b",
+      q7: "correct",
+      q8: "a",
+      q9: "correct",
+      q10: "a",
+      q11: "a",
+      q12: "a",
+      q13: "a"
+    };
+
+    // Function to Check Answers
+    function checkAnswers() {
+      const errorDiv = document.getElementById("error-message");
+      const gradeBox = document.getElementById("grade-box");
+      const scoreSpan = document.getElementById("score");
+
+      // Reset feedback and error messages
+      errorDiv.style.display = "none";
+      gradeBox.style.display = "none";
+
+      // Calculate correct answers
+      let correctCount = 0;
+      let allAnswered = true;
+
+      for (const [key, correctAnswer] of Object.entries(correctAnswers)) {
+        const selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+        const feedbackDiv = document.getElementById(`${key}-feedback`);
+        feedbackDiv.innerHTML = ""; // Clear previous feedback
+
+        if (!selectedOption) {
+          allAnswered = false;
+          break;
+        }
+
+        const userAnswer = selectedOption.value;
+        if (userAnswer === correctAnswer) {
+          correctCount++;
+          feedbackDiv.innerHTML = `<span class="correct">✅ Correct</span>`;
+        } else {
+          feedbackDiv.innerHTML = `<span class="incorrect">❌ Incorrect</span> The correct answer is: ${correctAnswer.toUpperCase()}`;
+        }
+      }
+
+      // Show error message if not all questions are answered
+      if (!allAnswered) {
+        errorDiv.style.display = "block";
+        return;
+      }
+
+      // Display grade
+      scoreSpan.textContent = correctCount;
+      gradeBox.style.display = "block";
+
+      // Disable input fields after submission
+      document.querySelectorAll('input[type="radio"]').forEach(input => {
+        input.disabled = true;
+      });
+    }
+  </script>
+</body>
+</html>
